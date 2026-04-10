@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Flutter Mobile Developer portfolio — building scalable, elegant apps with clean architecture and refined UI/UX." />
+  <meta name="keywords" content="Flutter, Dart, Mobile Developer, iOS, Android, Clean Architecture, Bloc, Firebase" />
+  <meta name="author" content="Alex Mercer" />
+  <meta property="og:title" content="Alex Mercer — Flutter Mobile Developer" />
+  <meta property="og:description" content="Building scalable, beautiful mobile experiences." />
+  <meta property="og:type" content="website" />
+  <title>Alex Mercer — Flutter Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════ NAV ══════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">Mohamed Abd Al Mawjoud<span class="dot">.</span></a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-toggle__icon">☀</span>
+        </button>
+        <a href="#contact" class="btn btn--ghost btn--sm">Hire Me</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- mobile drawer -->
+    <div class="nav__drawer" id="drawer">
+      <ul>
+        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#skills" class="drawer-link">Skills</a></li>
+        <li><a href="#projects" class="drawer-link">Projects</a></li>
+        <li><a href="#experience" class="drawer-link">Journey</a></li>
+        <li><a href="#contact" class="drawer-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════ HERO ══════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="hero__content reveal">
+        <p class="hero__eyebrow">
+          <span class="status-dot"></span> Available for work
+        </p>
+        <h1 class="hero__name">Mohamed<br /><span class="hero__name--accent">Abd Al Mawjoud</span></h1>
+        <p class="hero__title">Mobile Developer <span class="hero__divider">/</span> Flutter Developer</p>
+        <p class="hero__tagline">
+          Crafting scalable, pixel-perfect mobile experiences<br class="desktop-br" />
+          from architecture to animation.
+        </p>
+        <div class="hero__ctas">
+          <a href="#projects" class="btn btn--primary">
+            <span>View Projects</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn--outline">Contact Me</a>
+          <a href="cv.pdf" download class="btn btn--ghost">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1v9M4 7l3.5 3.5L11 7M2 13h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Download CV
+          </a>
+        </div>
+        <!-- <div class="hero__metrics">
+          <div class="metric">
+            <span class="metric__num">5+</span>
+            <span class="metric__label">Years Flutter</span>
+          </div>
+          <div class="metric__sep"></div>
+          <div class="metric">
+            <span class="metric__num">30+</span>
+            <span class="metric__label">Apps Shipped</span>
+          </div>
+          <div class="metric__sep"></div>
+          <div class="metric">
+            <span class="metric__num">1M+</span>
+            <span class="metric__label">Downloads</span>
+          </div> -->
+        </div>
+      </div>
+      <div class="hero__phone reveal reveal--delay">
+        <div class="phone-mockup">
+          <div class="phone-mockup__frame">
+            <div class="phone-mockup__notch"></div>
+            <div class="phone-mockup__screen">
+              <div class="app-preview">
+                <div class="app-preview__bar">
+                  <div class="app-preview__dot" style="background:#ff5f57"></div>
+                  <div class="app-preview__dot" style="background:#ffbd2e"></div>
+                  <div class="app-preview__dot" style="background:#28c840"></div>
+                </div>
+                <div class="app-preview__header">
+                  <div class="skeleton skeleton--circle"></div>
+                  <div class="skeleton-group">
+                    <div class="skeleton" style="width:80px;height:10px"></div>
+                    <div class="skeleton" style="width:50px;height:8px;margin-top:4px"></div>
+                  </div>
+                </div>
+                <div class="app-preview__card app-preview__card--accent">
+                  <div class="app-preview__card-label">Balance</div>
+                  <div class="app-preview__card-value">$12,450.00</div>
+                  <div class="app-preview__card-sub">↑ 3.2% this month</div>
+                </div>
+                <div class="app-preview__row">
+                  <div class="app-preview__chip">Send</div>
+                  <div class="app-preview__chip">Receive</div>
+                  <div class="app-preview__chip">Pay</div>
+                </div>
+                <div class="app-preview__list">
+                  <div class="app-preview__item"><div class="skeleton skeleton--sm-circle"></div><div class="app-preview__item-info"><div class="skeleton" style="width:60px;height:8px"></div><div class="skeleton" style="width:40px;height:6px;margin-top:3px"></div></div><span class="app-preview__amount pos">+$240</span></div>
+                  <div class="app-preview__item"><div class="skeleton skeleton--sm-circle"></div><div class="app-preview__item-info"><div class="skeleton" style="width:70px;height:8px"></div><div class="skeleton" style="width:45px;height:6px;margin-top:3px"></div></div><span class="app-preview__amount neg">-$89</span></div>
+                  <div class="app-preview__item"><div class="skeleton skeleton--sm-circle"></div><div class="app-preview__item-info"><div class="skeleton" style="width:55px;height:8px"></div><div class="skeleton" style="width:35px;height:6px;margin-top:3px"></div></div><span class="app-preview__amount pos">+$580</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ ABOUT ══════════════════════════ -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__image-col reveal">
+            <div class="about__img-wrapper">
+              <div class="about__img-placeholder">
+                <img src="my_image.png" alt="Personal Image" class="about__avatar" />
+              </div>
+              <div class="about__tag about__tag--1">
+                <span>🎯</span> Clean Architecture
+              </div>
+              <div class="about__tag about__tag--2">
+                <span>⚡</span> 60fps UIs
+              </div>
+            </div>
+          </div>
+          <div class="about__text-col reveal reveal--delay">
+            <p class="section__eyebrow">About Me</p>
+            <h2 class="section__title">Building apps people<br /><em>actually</em> love.</h2>
+            <p class="about__bio">
+              I’m a Flutter engineer focused on designing and building production-ready mobile applications for iOS and Android. My work sits at the intersection of clean software architecture and thoughtful UI/UX design — because great code and great experience aren’t mutually exclusive.
+            </p>
+            <p class="about__bio">
+              I care deeply about scalability, testability, and the last 5% of polish that makes an app feel truly native.
+            </p>
+            <div class="about__facts">
+              <div class="fact">
+                <span class="fact__icon">📍</span>
+                <span>Alexandria, Egypt · Flexible Work Preferences (Remote / On-site / Hybrid)</span>
+              </div>
+              <div class="fact">
+                <span class="fact__icon">🎓</span>
+                <span>BSc Computer Science, Alexandria University</span>
+              </div>
+              <div class="fact">
+                <span class="fact__icon">🗣</span>
+                <span>Arabic (Native) · English (Fluent)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ SKILLS ══════════════════════════ -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Tech Stack</p>
+          <h2 class="section__title">Tools I master.</h2>
+        </div>
+        <div class="skills__grid">
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 33L20 7l13 26H7z" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/><path d="M13 22h14" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="skill-card__title">Flutter & Dart</h3>
+            <p class="skill-card__desc">Deep expertise in Flutter SDK, custom widgets, animations, rendering engine, and platform channels for native integrations.</p>
+            <div class="skill-tags">
+              <span>Flutter 3.x</span><span>Dart</span><span>Custom Painter</span><span>Animations</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal reveal--delay">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="12" height="12" rx="2" stroke="var(--accent)" stroke-width="2"/><rect x="22" y="6" width="12" height="12" rx="2" stroke="var(--accent)" stroke-width="2"/><rect x="6" y="22" width="12" height="12" rx="2" stroke="var(--accent)" stroke-width="2"/><rect x="22" y="22" width="12" height="12" rx="2" stroke="var(--accent)" stroke-width="2"/></svg>
+            </div>
+            <h3 class="skill-card__title">State Management</h3>
+            <p class="skill-card__desc">Proven patterns for complex app states — from small apps to enterprise-scale solutions with predictable data flows.</p>
+            <div class="skill-tags">
+              <span>Bloc / Cubit</span><span>Riverpod</span><span>Provider</span><span>GetX</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="13" stroke="var(--accent)" stroke-width="2"/><path d="M20 10v10l6 4" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="skill-card__title">Backend & APIs</h3>
+            <p class="skill-card__desc">Seamless integration with cloud services, real-time databases, push notifications, and auth flows.</p>
+            <div class="skill-tags">
+              <span>Firebase</span><span>REST APIs</span><span>GraphQL</span><span>Supabase</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal reveal--delay">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 32V14l12-6 12 6v18" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/><rect x="15" y="22" width="10" height="10" rx="1" stroke="var(--accent)" stroke-width="2"/></svg>
+            </div>
+            <h3 class="skill-card__title">Clean Architecture</h3>
+            <p class="skill-card__desc">Structured, maintainable codebases using SOLID principles, dependency injection, and clear separation of concerns.</p>
+            <div class="skill-tags">
+              <span>Clean Arch</span><span>MVVM</span><span>Repository</span><span>TDD</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="10" width="26" height="20" rx="3" stroke="var(--accent)" stroke-width="2"/><path d="M14 19h5M14 23h8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><circle cx="27" cy="19" r="3" stroke="var(--accent)" stroke-width="2"/></svg>
+            </div>
+            <h3 class="skill-card__title">UI/UX Design</h3>
+            <p class="skill-card__desc">Design-literate engineer who bridges Figma to code — pixel-perfect implementations with Material 3 and Cupertino.</p>
+            <div class="skill-tags">
+              <span>Figma</span><span>Material 3</span><span>Cupertino</span><span>Lottie</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal reveal--delay">
+            <div class="skill-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="15" r="6" stroke="var(--accent)" stroke-width="2"/><path d="M8 33c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="skill-card__title">DevOps & Tooling</h3>
+            <p class="skill-card__desc">End-to-end delivery pipelines, automated testing, and distribution across the App Store and Google Play.</p>
+            <div class="skill-tags">
+              <span>GitHub Actions</span><span>Fastlane</span><span>Flavors</span><span>Codemagic</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ PROJECTS ══════════════════════════ -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Work</p>
+          <h2 class="section__title">Selected projects.</h2>
+        </div>
+        <div class="projects__grid">
+
+          <!-- Project 1 -->
+          <article class="project-card project-card--featured reveal">
+            <div class="project-card__screen">
+              <div class="project-card__mockup fintech-mockup">
+                <div class="pm-header">
+                  <span class="pm-title">NeoBank</span>
+                  <span class="pm-bal">$8,240</span>
+                </div>
+                <div class="pm-chart">
+                  <svg viewBox="0 0 200 60" preserveAspectRatio="none"><polyline points="0,50 30,35 60,40 90,20 130,30 160,10 200,15" fill="none" stroke="var(--accent)" stroke-width="2"/><polyline points="0,50 30,35 60,40 90,20 130,30 160,10 200,15 200,60 0,60" fill="url(#chartGrad)" stroke="none"/><defs><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--accent)" stop-opacity="0.3"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs></svg>
+                </div>
+                <div class="pm-actions">
+                  <div class="pm-btn">Send</div>
+                  <div class="pm-btn">Top Up</div>
+                  <div class="pm-btn">History</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__meta">
+                <span class="project-card__tag">Fintech</span>
+                <span class="project-card__tag">Featured</span>
+              </div>
+              <h3 class="project-card__title">NeoBank Mobile</h3>
+              <p class="project-card__desc">A full-featured digital banking app with real-time transaction tracking, budget analytics, and card management. Built with offline-first architecture.</p>
+              <div class="project-card__stack">
+                <span>Flutter</span><span>Bloc</span><span>Firebase</span><span>Plaid API</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--primary btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7c0 2.657 1.723 4.915 4.11 5.711.3.055.41-.13.41-.29v-1.015C3.726 11.82 3.37 10.65 3.37 10.65c-.273-.693-.667-.878-.667-.878-.545-.373.041-.365.041-.365.602.042.919.618.919.618.535.917 1.404.652 1.746.499.054-.388.21-.652.38-.801-1.332-.151-2.732-.666-2.732-2.965 0-.655.234-1.19.618-1.61-.062-.151-.268-.762.059-1.588 0 0 .504-.161 1.65.615A5.748 5.748 0 017 4.983a5.748 5.748 0 011.505.202c1.145-.776 1.648-.615 1.648-.615.328.826.122 1.437.06 1.589.385.42.617.955.617 1.61 0 2.305-1.402 2.812-2.738 2.96.215.185.407.55.407 1.11v1.645c0 .16.108.348.413.289C11.279 11.914 13 9.657 13 7c0-3.314-2.686-6-6-6z" fill="currentColor"/></svg>
+                  GitHub
+                </a>
+                <a href="#" class="btn btn--outline btn--sm">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card reveal reveal--delay">
+            <div class="project-card__screen">
+              <div class="project-card__mockup health-mockup">
+                <div class="hm-ring-wrapper">
+                  <svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/><circle cx="40" cy="40" r="32" fill="none" stroke="#34d399" stroke-width="8" stroke-dasharray="140 62" stroke-linecap="round" transform="rotate(-90 40 40)"/></svg>
+                  <div class="hm-ring-label">
+                    <span class="hm-ring-val">72%</span>
+                    <span class="hm-ring-sub">Goal</span>
+                  </div>
+                </div>
+                <div class="hm-stats">
+                  <div class="hm-stat"><span>🏃</span><b>8,430</b><small>steps</small></div>
+                  <div class="hm-stat"><span>🔥</span><b>420</b><small>kcal</small></div>
+                  <div class="hm-stat"><span>💤</span><b>7h 20m</b><small>sleep</small></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__meta">
+                <span class="project-card__tag">Health</span>
+              </div>
+              <h3 class="project-card__title">FitPulse</h3>
+              <p class="project-card__desc">Health & fitness tracker with wearable sync, workout plans, and personalized AI insights. HealthKit and Google Fit integration.</p>
+              <div class="project-card__stack">
+                <span>Flutter</span><span>Riverpod</span><span>HealthKit</span><span>ML Kit</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--primary btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7c0 2.657 1.723 4.915 4.11 5.711.3.055.41-.13.41-.29v-1.015C3.726 11.82 3.37 10.65 3.37 10.65c-.273-.693-.667-.878-.667-.878-.545-.373.041-.365.041-.365.602.042.919.618.919.618.535.917 1.404.652 1.746.499.054-.388.21-.652.38-.801-1.332-.151-2.732-.666-2.732-2.965 0-.655.234-1.19.618-1.61-.062-.151-.268-.762.059-1.588 0 0 .504-.161 1.65.615A5.748 5.748 0 017 4.983a5.748 5.748 0 011.505.202c1.145-.776 1.648-.615 1.648-.615.328.826.122 1.437.06 1.589.385.42.617.955.617 1.61 0 2.305-1.402 2.812-2.738 2.96.215.185.407.55.407 1.11v1.645c0 .16.108.348.413.289C11.279 11.914 13 9.657 13 7c0-3.314-2.686-6-6-6z" fill="currentColor"/></svg>
+                  GitHub
+                </a>
+                <a href="#" class="btn btn--outline btn--sm">App Store</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card reveal">
+            <div class="project-card__screen">
+              <div class="project-card__mockup shop-mockup">
+                <div class="sm-header">🛍 Shop</div>
+                <div class="sm-product">
+                  <div class="sm-product-img"></div>
+                  <div class="sm-product-info">
+                    <div class="sm-product-name">Air Jordan 1</div>
+                    <div class="sm-product-price">$180</div>
+                  </div>
+                </div>
+                <div class="sm-cta">Add to Cart</div>
+              </div>
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__meta">
+                <span class="project-card__tag">E-Commerce</span>
+              </div>
+              <h3 class="project-card__title">ShopFlow</h3>
+              <p class="project-card__desc">End-to-end e-commerce platform with AR product preview, smart search, and Stripe checkout. 4.8★ on App Store.</p>
+              <div class="project-card__stack">
+                <span>Flutter</span><span>GetX</span><span>Stripe</span><span>ARKit</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--primary btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7c0 2.657 1.723 4.915 4.11 5.711.3.055.41-.13.41-.29v-1.015C3.726 11.82 3.37 10.65 3.37 10.65c-.273-.693-.667-.878-.667-.878-.545-.373.041-.365.041-.365.602.042.919.618.919.618.535.917 1.404.652 1.746.499.054-.388.21-.652.38-.801-1.332-.151-2.732-.666-2.732-2.965 0-.655.234-1.19.618-1.61-.062-.151-.268-.762.059-1.588 0 0 .504-.161 1.65.615A5.748 5.748 0 017 4.983a5.748 5.748 0 011.505.202c1.145-.776 1.648-.615 1.648-.615.328.826.122 1.437.06 1.589.385.42.617.955.617 1.61 0 2.305-1.402 2.812-2.738 2.96.215.185.407.55.407 1.11v1.645c0 .16.108.348.413.289C11.279 11.914 13 9.657 13 7c0-3.314-2.686-6-6-6z" fill="currentColor"/></svg>
+                  GitHub
+                </a>
+                <a href="#" class="btn btn--outline btn--sm">Play Store</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card reveal reveal--delay">
+            <div class="project-card__screen">
+              <div class="project-card__mockup chat-mockup">
+                <div class="cm-msg cm-msg--in">Hey, project update?</div>
+                <div class="cm-msg cm-msg--out">Done! Check the PR 🚀</div>
+                <div class="cm-msg cm-msg--in">Awesome, merging now!</div>
+                <div class="cm-input">
+                  <div class="cm-input-box">Type a message…</div>
+                  <div class="cm-send">▲</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__info">
+              <div class="project-card__meta">
+                <span class="project-card__tag">Productivity</span>
+              </div>
+              <h3 class="project-card__title">Nexus Chat</h3>
+              <p class="project-card__desc">Real-time team messaging with end-to-end encryption, file sharing, and thread management. WebSocket-powered with offline sync.</p>
+              <div class="project-card__stack">
+                <span>Flutter</span><span>Bloc</span><span>WebSockets</span><span>Hive</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="btn btn--primary btn--sm">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C3.686 1 1 3.686 1 7c0 2.657 1.723 4.915 4.11 5.711.3.055.41-.13.41-.29v-1.015C3.726 11.82 3.37 10.65 3.37 10.65c-.273-.693-.667-.878-.667-.878-.545-.373.041-.365.041-.365.602.042.919.618.919.618.535.917 1.404.652 1.746.499.054-.388.21-.652.38-.801-1.332-.151-2.732-.666-2.732-2.965 0-.655.234-1.19.618-1.61-.062-.151-.268-.762.059-1.588 0 0 .504-.161 1.65.615A5.748 5.748 0 017 4.983a5.748 5.748 0 011.505.202c1.145-.776 1.648-.615 1.648-.615.328.826.122 1.437.06 1.589.385.42.617.955.617 1.61 0 2.305-1.402 2.812-2.738 2.96.215.185.407.55.407 1.11v1.645c0 .16.108.348.413.289C11.279 11.914 13 9.657 13 7c0-3.314-2.686-6-6-6z" fill="currentColor"/></svg>
+                  GitHub
+                </a>
+                <a href="#" class="btn btn--outline btn--sm">Live Demo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ EXPERIENCE ══════════════════════════ -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section__header reveal">
+          <p class="section__eyebrow">Journey</p>
+          <h2 class="section__title">Where I've been.</h2>
+        </div>
+        <div class="timeline">
+
+          <!-- Note: The most recent role is commented out to create a sense of intrigue and encourage contact for details. Uncomment to reveal the full experience. -->
+          
+          <!-- <div class="timeline__item reveal">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+              <div class="timeline__line"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Senior Flutter Engineer</h3>
+                  <p class="timeline__company">TechVision · Cairo / Remote</p>
+                </div>
+                <span class="timeline__date">2022 — Present</span>
+              </div>
+              <p class="timeline__desc">Led mobile development for a fintech product serving 200K+ users. Architected a multi-module Flutter monorepo, reducing build times by 40% and feature delivery by 2x. Mentored a team of 4 junior developers.</p>
+              <div class="timeline__tags">
+                <span>Flutter</span><span>Bloc</span><span>Clean Architecture</span><span>Team Lead</span>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="timeline__item reveal reveal--delay">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+              <div class="timeline__line"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Flutter Developer</h3>
+                  <p class="timeline__company">Swvl · Cairo</p>
+                </div>
+                <span class="timeline__date">2020 — 2022</span>
+              </div>
+              <p class="timeline__desc">Shipped the rider app rewrite from React Native to Flutter — cut crash rate from 2.4% to 0.2%. Implemented real-time GPS tracking and a custom map rendering layer for 1M+ active users.</p>
+              <div class="timeline__tags">
+                <span>Flutter</span><span>Maps SDK</span><span>WebSockets</span><span>Performance</span>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="timeline__item reveal">
+            <div class="timeline__marker">
+              <div class="timeline__dot"></div>
+              <div class="timeline__line"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">Mobile Developer (Flutter)</h3>
+                  <p class="timeline__company">Intern · Hyperd</p>
+                </div>
+                <span class="timeline__date">2025 — 2026</span>
+              </div>
+              <p class="timeline__desc">Completed a DEPI internship in mobile development, gaining hands-on experience building Flutter applications and working with real-world development workflows, including UI implementation, API integration, and code organization.</p>
+              <div class="timeline__tags">
+                <span>Flutter</span><span>Firebase</span><span>git</span><span>GitHub</span><span>Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal reveal--delay">
+            <div class="timeline__marker">
+              <div class="timeline__dot timeline__dot--edu"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__header">
+                <div>
+                  <h3 class="timeline__role">BSc Computer Science</h3>
+                  <p class="timeline__company">Alexandria University · Faculty of Science  Computer Science Department</p>
+                </div>
+                <span class="timeline__date">2023 — 2027</span>
+              </div>
+              <p class="timeline__desc">Computer Science student at Alexandria University, focused on mobile development and software engineering fundamentals. Building practical experience through personal Flutter projects and continuous learning.</p>
+              <div class="timeline__tags">
+                <span>Data Structures</span><span>OOP</span><span>Algorithms</span><span>Networking</span><span>OS</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════ CONTACT ══════════════════════════ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact__inner">
+          <div class="contact__left reveal">
+            <p class="section__eyebrow">Contact</p>
+            <h2 class="section__title">Let's build something<br />remarkable.</h2>
+            <p class="contact__sub">Open to full-time roles, freelance projects, and interesting conversations. I typically respond within 24 hours.</p>
+            <div class="contact__socials">
+              <a href="mailto:mohamedabdalmawjoudd@gmail.com" class="social-link">
+                <div class="social-link__icon">✉</div>
+                <div>
+                  <div class="social-link__label">Email</div>
+                  <div class="social-link__val">mohamedabdalmawjoudd@gmail.com</div>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/mohamedahmed05" target="_blank" rel="noopener" class="social-link">
+                <div class="social-link__icon">in</div>
+                <div>
+                  <div class="social-link__label">LinkedIn</div>
+                  <div class="social-link__val">/in/mohamedahmed05</div>
+                </div>
+              </a>
+              <a href="https://github.com/mohamed4822" target="_blank" rel="noopener" class="social-link">
+                <div class="social-link__icon">
+                  <svg width="18" height="18" viewBox="0 0 14 14" fill="currentColor"><path d="M7 1C3.686 1 1 3.686 1 7c0 2.657 1.723 4.915 4.11 5.711.3.055.41-.13.41-.29v-1.015C3.726 11.82 3.37 10.65 3.37 10.65c-.273-.693-.667-.878-.667-.878-.545-.373.041-.365.041-.365.602.042.919.618.919.618.535.917 1.404.652 1.746.499.054-.388.21-.652.38-.801-1.332-.151-2.732-.666-2.732-2.965 0-.655.234-1.19.618-1.61-.062-.151-.268-.762.059-1.588 0 0 .504-.161 1.65.615A5.748 5.748 0 017 4.983a5.748 5.748 0 011.505.202c1.145-.776 1.648-.615 1.648-.615.328.826.122 1.437.06 1.589.385.42.617.955.617 1.61 0 2.305-1.402 2.812-2.738 2.96.215.185.407.55.407 1.11v1.645c0 .16.108.348.413.289C11.279 11.914 13 9.657 13 7c0-3.314-2.686-6-6-6z"/></svg>
+                </div>
+                <div>
+                  <div class="social-link__label">GitHub</div>
+                  <div class="social-link__val">@mohamed4822</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="contact__form-wrapper reveal reveal--delay">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzdklrrr" method="POST">
+
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project, job offer, collab…" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about the project…" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14 2L2 8l5 2.5L9.5 14 14 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <p class="form-success" id="formSuccess" hidden>
+                ✓ Message sent! I'll be in touch soon.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2026 Mohamed Ahmed Abd Al Mawjoud. Built with ❤ and lots of <code>flutter run</code>.</p>
+      <div class="footer__links">
+        <a href="#hero">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
