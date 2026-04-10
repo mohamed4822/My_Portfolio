@@ -647,9 +647,11 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   ABOUT
+    ABOUT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.about { background: var(--bg-2); }
+.about {
+  background: var(--bg-2);
+}
 
 .about__inner {
   display: flex;
@@ -658,17 +660,22 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   flex-wrap: wrap;
 }
 
+/* 🔥 FIX: allow proper shrinking instead of clipping */
 .about__image-col {
-  flex: 0 0 320px;
+  flex: 0 1 320px;
+  min-width: 0;
 }
 
 .about__img-wrapper {
   position: relative;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
 }
 
+/* 🔥 FIX: prevent overflow clipping */
 .about__img-placeholder {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 360px;
   background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-h) 100%);
   border-radius: 24px;
@@ -676,7 +683,7 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible; /* IMPORTANT FIX */
   position: relative;
 }
 
@@ -696,6 +703,7 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   opacity: 0.4;
 }
 
+/* 🔥 FIX: prevent tags from getting clipped */
 .about__tag {
   position: absolute;
   background: var(--bg-card);
@@ -711,16 +719,27 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow-card);
   animation: tagFloat 4s ease-in-out infinite;
+  z-index: 2;
 }
 
-.about__tag--1 { bottom: -20px; left: -30px; animation-delay: 0s; }
-.about__tag--2 { top: 30px; right: -30px; animation-delay: -2s; }
+.about__tag--1 {
+  bottom: -20px;
+  left: -20px;
+  animation-delay: 0s;
+}
+
+.about__tag--2 {
+  top: 30px;
+  right: -20px;
+  animation-delay: -2s;
+}
 
 @keyframes tagFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
 
+/* 🔥 FIX: text column safety */
 .about__text-col {
   flex: 1 1 320px;
   min-width: 0;
@@ -733,7 +752,10 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   margin-bottom: 16px;
 }
 
-.about__bio strong { color: var(--txt); font-weight: 500; }
+.about__bio strong {
+  color: var(--txt);
+  font-weight: 500;
+}
 
 .about__facts {
   display: flex;
@@ -744,13 +766,6 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   border-top: 1px solid var(--border);
 }
 
-@media (max-width: 900px) {
-  .about__inner {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
 .fact {
   display: flex;
   align-items: center;
@@ -759,8 +774,23 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   color: var(--txt-muted);
 }
 
-.fact__icon { font-size: 1rem; }
+.fact__icon {
+  font-size: 1rem;
+}
 
+@media (max-width: 900px) {
+  .about__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 🔥 mobile safety */
+  .about__tag--1,
+  .about__tag--2 {
+    left: auto;
+    right: auto;
+  }
+}
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    SKILLS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
