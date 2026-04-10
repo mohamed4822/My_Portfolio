@@ -655,9 +655,12 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   display: flex;
   gap: 80px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.about__image-col { flex: 0 0 320px; }
+.about__image-col {
+  flex: 0 0 320px;
+}
 
 .about__img-wrapper {
   position: relative;
@@ -718,7 +721,10 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   50% { transform: translateY(-6px); }
 }
 
-.about__text-col { flex: 1; }
+.about__text-col {
+  flex: 1 1 320px;
+  min-width: 0;
+}
 
 .about__bio {
   color: var(--txt-muted);
@@ -736,6 +742,13 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   margin-top: 32px;
   padding-top: 32px;
   border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .about__inner {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .fact {
