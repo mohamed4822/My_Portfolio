@@ -337,6 +337,17 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   gap: 40px;
 }
 
+.hero__title,
+.hero__name {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+  overflow: visible;
+  white-space: normal;
+}
+
 /* Orbs */
 .hero__bg {
   position: fixed;
