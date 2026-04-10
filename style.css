@@ -337,6 +337,11 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   gap: 40px;
 }
 
+.hero,
+.hero__content {
+  overflow: visible;
+}
+
 .hero__title,
 .hero__name {
   display: inline-block;
