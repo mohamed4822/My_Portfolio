@@ -1362,3 +1362,45 @@ code { font-family: 'Fira Code', monospace; font-size: 0.85em; color: var(--acce
   .project-card__screen { display: none; }
   .timeline { padding-left: 0; }
 }
+/* ───── FIX NAV LOGO ON MOBILE (Mohamed Fix 😎) ───── */
+
+/* Allow logo text to behave nicely */
+.nav__logo {
+  white-space: normal;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Default: show full name */
+.full-name { display: inline; }
+.short-name { display: none; }
+
+/* 📱 Mobile optimization */
+@media (max-width: 768px) {
+
+  /* Use short name instead */
+  .full-name { display: none; }
+  .short-name { display: inline; }
+
+  /* Prevent layout breaking */
+  .nav__inner {
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  /* Make logo smaller so it fits */
+  .nav__logo {
+    font-size: 0.95rem;
+    max-width: 60%;
+  }
+
+}
+
+/* 📱 Extra small devices */
+@media (max-width: 480px) {
+  .nav__logo {
+    font-size: 0.85rem;
+  }
+}
